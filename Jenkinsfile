@@ -1,8 +1,13 @@
-node{
-  stage('Git Checkout'){
-    git 'https://github.com/raghugore/testing-jenkins'
+pipeline{
+  agent any
+  tools{
+    maven 'maven-3'
   }
-  stage('Maven Build'){
-  sh 'mvn package'
-  }
+  stages{
+    stage('Build'){
+      steps{
+        sh 'mvn clean package'
+      }
+    } 
+  } 
 }
