@@ -3,7 +3,7 @@ pipeline{
   tools{
     maven 'maven-3'
   }
-  envirnoment{
+  environment{
   	DOCKER_TAG = getDockerTag()
   }
   stages{
