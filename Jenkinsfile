@@ -18,9 +18,11 @@ pipeline{
       }
     } 
     stage('Push Docker Image'){
-     withCredentials([string(credentialsId: 'raghav-docker-hub', variable: 'dockerHubPassword')]) {
+      steps{
+        withCredentials([string(credentialsId: 'raghav-docker-hub', variable: 'dockerHubPassword')]) {
        sh "docker login -u raghugore -p ${dockerHubPassword}"
        sh "docker push raghugore/kube:${DOCKER_TAG}"
+        }
       }
     } 
   } 
