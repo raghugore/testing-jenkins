@@ -8,7 +8,7 @@ public class HelloController {
 
 	@RequestMapping("/")
 	public String getMessgae() {
-		return "My first hosting!!!";
+		return "Hi Mangu Bhai!!!";
 	}
 
 }
