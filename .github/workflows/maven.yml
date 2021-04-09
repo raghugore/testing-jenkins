@@ -21,7 +21,7 @@ jobs:
             cd ~/raghav-testing/testing-jenkins
             eval "$(ssh-agent -s)"
             ssh-add -k ~/.ssh/ajay_paramlogic
-            git pull origin master
+            git pull origin test-jenkins-branch
             docker build -t test:0.0.2 .
             docker rm -f test
             docker run -d \
